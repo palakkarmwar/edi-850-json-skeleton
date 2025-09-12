@@ -1,0 +1,92 @@
+Table Assumption: PurchaseOrders
+PO_ID	Buyer	Item	Quantity	Status	Price
+101	Buyer A	Item X	50	Pending	500
+102	Buyer B	Item Y	200	Completed	2000
+103	Buyer A	Item Z	150	Pending	1500
+104	Buyer C	Item X	80	Completed	800
+105	Buyer B	Item Z	120	Pending	1200
+
+
+===================================================================
+Practice Tasks
+Task 1: Basic SELECT
+Show all columns of all POs.
+Select * 
+From PurchaseOrders;
+Show only PO_ID, Buyer, and Quantity.
+Select PO_ID , Buyer and Quantity
+From PurchaseOrders;
+
+-----------------------------------------------
+
+Task 2: WHERE Filters
+Find all pending POs.
+Select * 
+From PurchaseOrders
+Where Status = 'Pending';
+Find all POs where Quantity > 100.
+Select * 
+From PurchaseOrders
+Where Quantity > 100;
+Find all POs for Buyer B.
+Select * 
+From PurchaseOrders
+Where Buyer = 'B';
+
+------------------------------------------------
+
+Task 3: GROUP BY Aggregation
+1.Count total POs per Buyer.
+Select Buyer , COUNT(PO_ID) AS Total_PO
+From PurchaseOrders
+Group By Buyer;
+2.Count total POs per Status.
+Select Status , Count(PO_ID)
+From PurchaseOrders
+Group By Status;
+3.Sum Quantity per Buyer.
+Select Buyer , SUM(Quantity)
+From PurchaseOrders
+Group By Buyer;
+------------------------------------------------
+
+Task 4: Combined SELECT + WHERE + GROUP BY
+1.Count pending POs per Buyer.
+Select Buyer , Count(PO_ID)
+From PurchaseOrders
+Where Status = 'Pending'
+Group By Buyer;
+2.Sum Quantity for orders with Quantity > 100 per Buyer.
+Select Buyer , SUM(Quantity)
+From PurchaseOrders
+Where Quantity > 100
+Group By Buyer;
+3.Show Buyers and number of POs where POs have Quantity > 50.
+Select Buyers , Count(PO_ID)
+From PurchaseOrders
+Where Quantity > 50
+Group By Buyer;
+-------------------------------------------------------
+Shipment_ID	Buyer	Carrier	Quantity	Status
+201	Buyer A	FedEx	40	Pending
+202	Buyer B	DHL	120	Completed
+203	Buyer A	UPS	200	Pending
+204	Buyer C	FedEx	75	Completed
+205	Buyer B	UPS	150	Pending
+
+
+Task 1 (WHERE + SELECT)
+
+👉 Find all shipments where Carrier = 'UPS' and Quantity > 100.
+(Expected result: only Shipment_ID 203 & 205)
+Select * 
+From Shipments
+Where Carrier = 'UPS' and Quantity > 100;
+
+Task 2 (GROUP BY)
+
+👉 Show the total Quantity shipped per Buyer.
+(Hint: use SUM(Quantity) with GROUP BY Buyer)
+Select Buyer , SUM(Quantity) AS Total_quantity
+From Shipments
+Group By Buyer;
