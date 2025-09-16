@@ -1,24 +1,52 @@
-# edi850_to_json.py
-# Work in Progress: Skeleton for converting EDI 850 PO into JSON
+#EDI 850 file --> json file
 
-edi_850_sample = """
-ST*850*0001~
-BEG*00*SA*PO12345**20250913~
-N1*BY*Buyer Name~
-N1*ST*Ship To Name~
-PO1*1*100*EA*10.00*PE*BP*12345~
-CTT*1~
-SE*...~
-"""
+import json
 
-edi_850_json = {
-    "Po_Number" : "PO12345",
-    "Po_Date" : "20250913",
-    "Buyer" : {"Name" :"Buyer Name"},
-    "Seller" : {"Name" : "Ship To Name"},
-    "Lines" : [
-            {"Lines" : 1 , "Item" : "12345" , "Qty" : 100 , "UOM" : "EA" , "Price" : 10.00 }
-    ]
-}
+def parsededi_850(file_path):
+    with open(file_path,'r') as file:
+        edi850_data = file.read()
 
-print(edi_850_json)
+
+        segments = edi850_data.strip().split("~")
+        output = {"PO_Number":None,"Buyer" : None, "Seller" : None , "Items": []}
+
+        for seg in segments:
+            seg = seg.strip()
+            if not seg:
+                continue
+
+            parts = seg.split("*")
+            
+            if parts[0]=="BEG":
+                output["PO_Number"] = parts[3]
+            elif parts[0] == "N1":
+                if parts[1] == "BY":
+                    output["Buyer"] = parts[2]
+                elif parts[1] == "ST":
+                    output["Seller"] = parts[2]
+            elif parts[0] == "PO1":
+                item = {"Line" : parts[1],
+                        "Qty" : parts[2],
+                        "Quantity_UOM" : parts[3],
+                        "Price" : parts[4],
+                        "Item_ID" : parts[-1]
+                        }
+                output["Items"].append(item)
+
+    return output
+
+
+if __name__ == "__main__":
+    result = parsededi_850("sample_edi/sample_850.txt")
+
+    try:
+        total = sum(int(item["Qty"]) * float(item["Price"]) for item in result["Items"])
+        result["TotalAmount"] = total
+    except Exception:
+        result["TotalAmount"] = None  # fallback if Qty/Price missing    
+
+    
+    with open('po.json','w') as file:
+        json.dump(result,file,indent=4)
+
+    print("Po Parsed to json and saved as po.json")    
