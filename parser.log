@@ -1,0 +1,32 @@
+2025-09-23 22:25:56,393 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-09-23 22:25:56,394 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-09-23 22:25:56,394 - INFO - Total Amount Calculated: 900.0
+2025-09-23 22:25:56,397 - INFO - Saved po.json successfully
+2025-09-23 22:25:56,421 - INFO - Cleaned data saved to po_clean.csv and po_clean.json
+2025-09-23 22:25:56,467 - INFO - SQLite DB created and table purchase_orders populated
+2025-09-23 22:25:56,478 - INFO - GenAI summary saved to summary.txt
+2025-10-02 00:55:45,211 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-10-02 00:55:45,212 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-10-02 00:55:45,212 - INFO - Total Amount Calculated: 900.0
+2025-10-02 00:55:45,214 - INFO - Saved outputs/po.json successfully
+2025-10-02 00:55:45,254 - INFO - Cleaned data saved to outputs/po_clean.csv and outputs/po_clean.json
+2025-10-02 00:55:45,287 - INFO - SQLite DB created and table purchase_orders populated
+2025-10-02 00:55:46,038 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-10-02 00:59:08,543 - INFO - GenAI summary saved to outputs/summary.txt
+2025-10-02 01:54:40,081 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-10-02 01:54:40,082 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-10-02 01:54:40,083 - INFO - Total Amount Calculated: 900.0
+2025-10-02 01:54:40,083 - INFO - Saved outputs/po.json successfully
+2025-10-02 01:54:40,096 - INFO - Cleaned data saved to outputs/po_clean.csv and outputs/po_clean.json
+2025-10-02 01:54:40,118 - INFO - SQLite DB created and table purchase_orders populated
+2025-10-02 01:54:40,122 - INFO - AI-style summary saved to outputs/summary.txt
+2025-10-02 02:37:03,606 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-10-02 02:37:03,607 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-10-02 02:37:03,630 - INFO - Cleaned data saved to outputs/po_clean.csv and outputs/po_clean.json
+2025-10-02 02:37:03,632 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-10-02 02:37:03,633 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-10-02 02:37:03,645 - INFO - Cleaned data saved to outputs/po_clean.csv and outputs/po_clean.json
+2025-10-02 02:37:03,646 - INFO - Reading EDI file: sample_edi/sample_850.txt
+2025-10-02 02:37:03,647 - INFO - Parsed PO_Number=XX-1234, Items=1
+2025-10-02 02:37:03,659 - INFO - Cleaned data saved to outputs/po_clean.csv and outputs/po_clean.json
+2025-10-02 02:37:03,661 - INFO - AI-style summary saved to outputs/summary.txt

@@ -46,8 +46,14 @@ Output (po.json):-
 }
 
 
-🔹 Next Steps (Planned)
+🔹AI Summary:
+PO XX-1234 from ABC AEROSPACE / None contains 1 line items.
+Total quantity: 25, Total spend: 900.00
+Items details:
+- XYZ-1234: Qty=25, Price=36
 
-AI-based PO summarization (using GenAI).
-Supplier performance analytics.
-Integration with AWS S3 for storage + RPA automation triggers.
+
+🔹 License
+🚫 Private Repository – No License
+This code is for personal/educational use only.
+Re-use, modification, or distribution is not permitted without permission.
