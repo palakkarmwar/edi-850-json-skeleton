@@ -54,12 +54,11 @@ PO1125EA36PEMGXYZ-1234~
 }
 
 
-```text
-AI Summary (outputs/summary.txt):
-PO XX-1234 from ABC AEROSPACE / None contains 1 line items.
-Total quantity: 25, Total spend: 900.00
-Items details:
-- XYZ-1234: Qty=25, Price=36
+> **AI Summary (outputs/summary.txt):**  
+> PO XX-1234 from ABC AEROSPACE / None contains 1 line items.  
+> Total quantity: 25, Total spend: 900.00  
+> Items details:  
+> - XYZ-1234: Qty=25, Price=36
 
 
 ## 🔹 License
