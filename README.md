@@ -55,8 +55,7 @@ PO1125EA36PEMGXYZ-1234~
 
 ---
 
-```plaintext
-AI Summary (outputs/summary.txt):
+🔹 AI Summary (outputs/summary.txt):
 PO XX-1234 from ABC AEROSPACE / None contains 1 line items.
 Total quantity: 25, Total spend: 900.00
 Items details:
@@ -64,7 +63,8 @@ Items details:
 
 ---
 
-## 🔹 License
+🔹 License
 🚫 Private Repository – No License
 This code is for personal/educational use only.
+Re-use, modification, or distribution is not permitted without permission.
 Re-use, modification, or distribution is not permitted without permission.
